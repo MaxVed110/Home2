@@ -61,15 +61,19 @@ public class FamilyTree {
     }
 
     void printResearch(Person name, String flag) {
-        if (flag.equals("C")) {
-            System.out.println("Дети " + name.namePerson + ": " + name.children);
-        } else if (flag.equals("P")) {
-            System.out.println("Родители " + name.namePerson + ": " + name.parent);
-        } else if (flag.equals("PC")) {
-            System.out.println("Дети " + name.namePerson + ": " + name.children);
-            System.out.println("Родители " + name.namePerson + ": " + name.parent);
-        } else {
-            System.out.println("Команда некорректна, попробуйте: C, P, или PC");
+        switch (flag){
+            case "C":
+                System.out.println("Дети " + name.namePerson + ": " + name.children);
+                break;
+            case "P":
+                System.out.println("Родители " + name.namePerson + ": " + name.parent);
+                break;
+            case "PC":
+                System.out.println("Дети " + name.namePerson + ": " + name.children);
+                System.out.println("Родители " + name.namePerson + ": " + name.parent);
+                break;
+            default:
+                System.out.println("Команда некорректна, попробуйте: C, P, или PC");
         }
     }
 }
