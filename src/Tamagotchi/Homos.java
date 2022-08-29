@@ -11,7 +11,7 @@ public class Homos {
         homosName = name;
     }
 
-    void getPet(String name) {
+    void setPet(String name) {
         listPet.add(new Pet(name));
         System.out.println("Человек " + homosName + " завёл питомца " + name);
     }
