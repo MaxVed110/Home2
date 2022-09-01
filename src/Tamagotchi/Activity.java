@@ -13,7 +13,7 @@ public interface Activity {
 
     default void feed(Homos name, String namePet) {
         Pet p = searchPet(name, namePet);
-        if (!p.getNamePet().equals("Error")) {
+        if (p != null) {
             p.listEat.add(1);
             System.out.println("Вы покормили питомца");
         } else {
@@ -23,7 +23,7 @@ public interface Activity {
 
     default void summon(Homos name, String namePet) {
         Pet p = searchPet(name, namePet);
-        if (!p.getNamePet().equals("Error")) {
+        if (p != null) {
             if (p.listEat.size() > 1) {
                 System.out.println("Событие: человек " + name.homosName + " позвал питомца "
                         + p.getNamePet() + " и он подошёл к нему");
@@ -38,7 +38,7 @@ public interface Activity {
 
     default void stroke(Homos name, String namePet) {
         Pet p = searchPet(name, namePet);
-        if (!p.getNamePet().equals("Error")) {
+        if (p != null) {
             p.reputationHomos.add(1);
             System.out.println("Событие: +1 очко репутации " + name.homosName + " у " + p.getNamePet());
         } else {
@@ -52,6 +52,6 @@ public interface Activity {
                 return p;
             }
         }
-        return new Cat("Error");
+        return null;
     }
 }
