@@ -1,21 +1,24 @@
 package FamilyTree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person {
     String namePerson;
     int agePerson;
+    int generationPerson;
     int idPerson;
-    String children = "";
-    String parent = "";
+    List<Person> listChildren = new ArrayList<>();
+    List<Person> listSpouse = new ArrayList<>();
 
-    public Person(String name, int age, int id, String children, String parent) {
+    public Person(String name, int age, int id, int generation) {
         this.namePerson = name;
         this.agePerson = age;
         this.idPerson = id;
-        this.children += children;
-        this.parent += parent;
+        this.generationPerson = generation;
     }
 
-    public Person(String name, int age, int id) {
-        this(name, age, id, "", "");
+    public Person(String name, int age) {
+        this(name, age, 0, 0);
     }
 }
